@@ -13,20 +13,46 @@ const NewsBoard = ({category}) => {
             setArticles(data.articles));
     },[category]);
 
-    return (
-      <div>
-        <h2 className="text-center"><span className ="">Home Page</span></h2>
-        {articles.map((news, index) => {
-                return <NewsItem
-                    key={index}
-                    title={news.title}
-                    description={news.description}
-                    src={news.urlToImage}
-                    url={news.url}
-                />
-            })}
-      </div>
-    )
+    //Home Page Setup
+    if(category == "home") {
+        return (
+        <div>
+            <h2 className="text-center"><span className="">Home Page</span></h2>
+        </div>
+        )
+    }
+    //Weather App Page Setup
+    else if(category == "weather") {
+        return (
+        <div>
+            <h2 className="text-center"><span className="">Integrated Weather App</span></h2>
+        </div>
+        )
+    }
+    //To-Do List Page Setup
+    else if(category == "todo") {
+        return (
+        <div>
+            <h2 className="text-center"><span className="">Integrated To-Do List</span></h2>
+        </div>
+        )
+    }
+    //News App Cases
+    else {
+        return (
+        <div>
+            {articles.map((news, index) => {
+                    return <NewsItem
+                        key={index}
+                        title={news.title}
+                        description={news.description}
+                        src={news.urlToImage}
+                        url={news.url}
+                    />
+                })}
+        </div>
+        )
+    }
 }
   
 export default NewsBoard;

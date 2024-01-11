@@ -22,9 +22,6 @@ const Navbar = ({setCategory}) => {
           <div className="nav-link" onClick={()=>setCategory("weather")}>Weather App</div>
         </li>
         <li className="nav-item">
-          <div className="nav-link" onClick={()=>setCategory("virginia")}>Virginia Elections Tool</div>
-        </li>
-        <li className="nav-item">
           <div className="nav-link" onClick={()=>setCategory("todo")}>To-Do List</div>
         </li>
       </ul>
